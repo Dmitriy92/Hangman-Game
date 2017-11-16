@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-   var gameNow = true; // if game is already exists
    var random = 0;
    var words = []; // array of words
    var lettersBlock = $('.letters');
@@ -28,17 +27,6 @@ $(document).ready(function () {
          'word' : word,
          'title' : title
       });
-   }
-
-   // if pressed any key
-   function checkKey(e) {
-      if(gameNow){
-         checkGame(e);
-      }
-      else{
-         gameNow = true;
-         startGame();
-      }
    }
 
    function getRandom(min, max) {
@@ -72,8 +60,6 @@ $(document).ready(function () {
          allLetters = $('.letters .let');
          // reset counter
          guessesCounter.text(resetCounter);
-         // reset title
-         // titleText.text('');
          // reset guesses
          wrongLetters.text('');
          currentCounter = resetCounter;
@@ -119,7 +105,6 @@ $(document).ready(function () {
             wrongLetters.append('<span>' + currentLetter + '</span> ')
          }
          haveGuess = false;
-         // console.log(alreadyGuessedLetters);
       }
       if(!allLetters.hasClass('hide-let')){
          gameOver();
@@ -133,7 +118,6 @@ $(document).ready(function () {
       audio[0].play();
       // set wins counter
       wins.text(++winsCounter);
-      gameNow = false;
       // set right img
       image.attr('src','assets/images/' + currentWord + '.jpg');
       titleText.text(currentTitle);
@@ -141,8 +125,8 @@ $(document).ready(function () {
    }
 
    function youLose() {
-      gameNow = false;
       titleText.text('You lose the game');
+      startGame();
    }
 
    createWord('blondie','call me by blondie');
@@ -150,10 +134,8 @@ $(document).ready(function () {
    createWord('hangman','game hangman');
    createWord('genesis','illegal alien by genesis');
 
-   document.onkeydown = checkKey;
+   document.onkeydown = checkGame;
 
    startGame();
-
-   // console.log(words[1].word);
 
 });

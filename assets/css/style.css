@@ -30,6 +30,7 @@ body *{
     font-size: 28px;
     line-height: 32px;
     padding: 15px;
+    text-transform: uppercase;
 }
 
 .hang-img-wrap{
