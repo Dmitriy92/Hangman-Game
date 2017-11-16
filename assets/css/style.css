@@ -51,10 +51,11 @@ body *{
 
 .hang-info{
     padding: 40px;
+    text-transform: uppercase;
 }
 
 .hang-info p{
-    margin-top: 5px;
+    margin-top: 10px;
     margin-bottom: 10px;
     font-weight: bold;
     font-size: 24px;
