@@ -1,25 +1,25 @@
 $(document).ready(function () {
 
-   var random = 0;
-   var words = []; // array of words
-   var lettersBlock = $('.letters');
-   var allLetters = undefined; // html of letters
-   var letters = []; // array of letter of current word
-   var wrongLetters = $('.wrong-let');
-   var alreadyGuessedLetters = [];
-   var currentWord = '';
-   var currentTitle = '';
-   var re = /[a-z A-Z]/gi; // regular - only en letters
-   var spanBlock = '<span class="let hide-let">_</span> ';
-   var guessesCounter = $('.guesses-counter');
-   var wins = $('.wins');
-   var winsCounter = 0;
-   var resetCounter = 12; // default guesses
-   var currentCounter = resetCounter; // current count of guesses
-   var titleText = $('.hang-title');
-   var haveGuess = false; // for counter. Decrease or not
-   var audio = $('.audio');
-   var image = $('.hang-img-wrap img');
+   var random,
+       words = [], // array of words
+       lettersBlock = $('.letters'),
+       allLetters = undefined, // html of letters
+       letters = [], // array of letter of current word
+       wrongLetters = $('.wrong-let'),
+       alreadyGuessedLetters = [],
+       currentWord = '',
+       currentTitle = '',
+       re = /[a-z A-Z]/gi, // regular - only en letters
+       spanBlock = '<span class="let hide-let">_</span> ',
+       guessesCounter = $('.guesses-counter'),
+       wins = $('.wins'),
+       winsCounter = 0,
+       resetCounter = 12, // default guesses
+       currentCounter = resetCounter, // current count of guesses
+       titleText = $('.hang-title'),
+       haveGuess = false, // for counter. Decrease or not
+       audio = $('.audio'),
+       image = $('.hang-img-wrap img');
 
    // for creating new word
    function createWord(word,title){
@@ -150,6 +150,31 @@ $(document).ready(function () {
    createWord('education','University provides you with higher education');
    createWord('weather','The weather gets warmer in spring');
    createWord('restaurant','A lot of delicious dishes');
+   createWord('skype','Modern means of communication');
+   createWord('friend','A friend in need is a friend indeed');
+   createWord('daughter','Mother loves her daughter very much');
+   createWord('knowledge','Too much knowledge makes the head bald');
+   createWord('honeymoon','A newly married couple had a great honeymoon.');
+   createWord('slippers','A very comfortable footwear for home');
+   createWord('problems','Try to get rid of your problems');
+   createWord('attention','Pay attention to your pronunciation');
+   createWord('secrets','I can keep secrets');
+   createWord('never','You never know where you are');
+   createWord('environment','There are many problems in an environment protection');
+   createWord('language','Chinese is a foreign language for many people');
+   createWord('university','One must pass exams to enter the University');
+   createWord('bird','A little bird told me');
+   createWord('favourite','Jack London is my favourite writer.');
+   createWord('relativity','Einstein is the author of the theory of relativity');
+   createWord('programme','I need a new version of the computer programme');
+   createWord('conversation','to have an interesting conversation with a friend');
+   createWord('computer','Nowadays everyone has a computer.');
+   createWord('representative','Byron is a bright representative of English poetry');
+   createWord('acknowledgement','This invention brought him a wide acknowledgement');
+   createWord('interest','to have an interest in modern music');
+   createWord('message','to receive a message by e-mail');
+   createWord('bridge','Bridge connects the river sides');
+   createWord('rest','I need some rest');
 
    document.onkeydown = checkGame;
 
