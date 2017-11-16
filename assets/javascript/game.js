@@ -130,9 +130,26 @@ $(document).ready(function () {
    }
 
    createWord('blondie','call me by blondie');
-   createWord('image','just image');
-   createWord('hangman','game hangman');
    createWord('genesis','illegal alien by genesis');
+   createWord('music','I am fond of classic music');
+   createWord('london','big and beautiful city');
+   createWord('musician','My friend is a good musician');
+   createWord('hobbies','interesting things to do');
+   createWord('crossword','a way to learn a lot of new words');
+   createWord('jazz','contribution to American music');
+   createWord('composer','Beethoven is a great composer');
+   createWord('traditions','Britain has good traditions of folk music');
+   createWord('popularity','Modern music is of great popularity');
+   createWord('famous','The Beatles is the most famous group');
+   createWord('singers','Pop singers are known throughout the world');
+   createWord('conductor','The most important figure in the orchestra');
+   createWord('morning','all the day is ahead');
+   createWord('breakfast','a cup of coffee and sandwich');
+   createWord('vacation','a lot of travelling');
+   createWord('museums','There are a lot of museums in Paris');
+   createWord('education','University provides you with higher education');
+   createWord('weather','The weather gets warmer in spring');
+   createWord('restaurant','A lot of delicious dishes');
 
    document.onkeydown = checkGame;
 
