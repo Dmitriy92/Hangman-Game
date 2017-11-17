@@ -19,7 +19,9 @@ $(document).ready(function () {
        titleText = $('.hang-title'),
        haveGuess = false, // for counter. Decrease or not
        audio = $('.audio'),
-       image = $('.hang-img-wrap img');
+       image = $('.hang-img-wrap img'),
+       rightWordBlock = $('.right-word'),
+       rightWord = $('.right-word span');
 
    // for creating new word
    function createWord(word,title){
@@ -61,7 +63,7 @@ $(document).ready(function () {
          // reset counter
          guessesCounter.text(resetCounter);
          // reset guesses
-         wrongLetters.text('');
+         wrongLetters.html('');
          currentCounter = resetCounter;
          alreadyGuessedLetters = [];
          audio.html();
@@ -91,7 +93,8 @@ $(document).ready(function () {
                haveGuess = true;
                allLetters.eq(i)
                    .removeClass('hide-let')
-                   .text(currentLetter);
+                   .text(currentLetter)
+                   .addClass('new-let');
             }
          }
          if(!haveGuess){
@@ -99,16 +102,27 @@ $(document).ready(function () {
                youLose();
                return;
             }
+            console.log(currentCounter);
             // decrease counter
             guessesCounter.text(--currentCounter);
+            if(currentCounter < 4){
+               guessesCounter.addClass('let-red');
+            }
+            else{
+               guessesCounter.removeClass('let-red');
+            }
             alreadyGuessedLetters.push(currentLetter);
-            wrongLetters.append('<span>' + currentLetter + '</span> ')
+            wrongLetters.append('<span class="let-red">' + currentLetter + '</span> ');
          }
          haveGuess = false;
       }
       if(!allLetters.hasClass('hide-let')){
          gameOver();
       }
+      setTimeout(function(){
+         allLetters.removeClass('new-let');
+         $('.wrong-let span').removeClass('let-red');
+      },400)
    }
 
    function gameOver(){
@@ -118,14 +132,20 @@ $(document).ready(function () {
       audio[0].play();
       // set wins counter
       wins.text(++winsCounter);
+      wins.addClass('new-let');
       // set right img
       image.attr('src','assets/images/' + currentWord + '.jpg');
       titleText.text(currentTitle);
+      guessesCounter.removeClass('let-red');
+      rightWordBlock.hide();
       startGame();
    }
 
    function youLose() {
+      guessesCounter.removeClass('let-red');
       titleText.text('You lose the game');
+      rightWordBlock.show();
+      rightWord.text(currentWord);
       startGame();
    }
 

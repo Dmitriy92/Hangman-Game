@@ -1,10 +1,20 @@
 body{
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #f9f9f9;
 }
 
 body *{
     box-sizing: border-box;
+    font-family: sans-serif;
+    color: #262626;
+}
+
+.hang-logo{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.hang-logo img{
+    max-width: 100%;
 }
 
 .clearfix{
@@ -24,6 +34,10 @@ body *{
 
 .hang-wrap{
     text-align: center;
+    background-color: #e4e4e4;
+    border: 1px solid #aaaaaa;
+    border-radius: 3px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
 }
 
 .hang-title{
@@ -44,19 +58,27 @@ body *{
 .hang-img-wrap, .hang-info{
     float: left;
     width: 50%;
-    border: 4px dashed white;
-    height: 600px;
+    border-top: 1px solid #aaaaaa;
     padding: 15px 40px;
 }
 
 .hang-info{
-    padding: 40px;
+    border-left: 1px solid #aaaaaa;
+    padding: 0;
     text-transform: uppercase;
 }
 
+.hang-info .info-block:last-of-type{
+    border-bottom: none;
+}
+
+.info-block{
+    padding: 15px 40px;
+    border-bottom: 1px solid #aaaaaa;
+}
+
 .hang-info p{
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     font-weight: bold;
     font-size: 24px;
     line-height: 28px;
@@ -67,5 +89,38 @@ body *{
     padding: 5px;
     font-size: 24px;
     line-height: 32px;
+    text-transform: uppercase;
+    transition: transform 0.5s;
+    display: inline-block;
+}
+
+.let.new-let,
+.wrong-let .let-red,
+.guesses-counter.let-red{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
+.new-let{
+    color: #73c255;
+}
+
+.let-red{
+    color: #f1372a;
+}
+
+.guesses-counter.let-red{
+    font-size: 32px;
+}
+
+.right-word{
+    display: none;
+}
+
+.right-word span{
+    font-weight: bold;
+    color: #f1372a;
+    font-size: 24px;
+    line-height: 28px;
     text-transform: uppercase;
 }
